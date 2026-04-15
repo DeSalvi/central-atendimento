@@ -13,11 +13,12 @@ public class VetorDinamico {
         ocupacao = 0;
     }
 
-    public boolean estaCheio() {
-        if (capacidade == ocupacao)
-            return true;
-        else
-            return false;
+    private boolean estaCheio() {
+        return capacidade == ocupacao;
+    }
+
+    private boolean estaVazio(){
+        return ocupacao == 0;
     }
 
     private void redimensiona(int novaCapacidade) {
@@ -33,5 +34,42 @@ public class VetorDinamico {
         if (estaCheio())
             redimensiona(capacidade * 2);
         v[ocupacao++] = p;
+    }
+
+    public Processo remove(){
+        if(estaVazio())
+            return null;
+
+        Processo aux = v[--ocupacao];
+        if(capacidade >= 10 && ocupacao <= capacidade / 4)
+            redimensiona(capacidade / 2);
+
+        return aux;
+    }
+
+    public void listar(){
+        for (int i=0; i< ocupacao; i++){
+            System.out.println(v[i].toString());
+        }
+    }
+
+    public int buscarPorProtocolo(int protocolo){
+        int indice = protocolo -1;
+        if(indice < 0 || indice >= capacidade)
+            return -1;
+
+        if(v[indice] == null)
+            return -1;
+
+        System.out.println(v[indice].toString());
+        return indice;
+    }
+
+    public void preencheVetor(){
+        for (int i=ocupacao; i < capacidade; i++){
+        v[i] = new Processo("Vinicius",""+(i+1), 1);
+        }
+        ocupacao = capacidade;
+        redimensiona(capacidade * 2);
     }
 }
