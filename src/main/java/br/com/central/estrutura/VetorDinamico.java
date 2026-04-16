@@ -13,11 +13,11 @@ public class VetorDinamico {
         ocupacao = 0;
     }
 
-    private boolean estaCheio() {
+    public boolean estaCheio() {
         return capacidade == ocupacao;
     }
 
-    private boolean estaVazio(){
+    public boolean estaVazio(){
         return ocupacao == 0;
     }
 
@@ -53,6 +53,12 @@ public class VetorDinamico {
         }
     }
 
+    public void imprimir(){
+        for (int i=ocupacao-1; i>= 0; i--){
+            System.out.println(v[i].toString());
+        }
+    }
+
     public int buscarPorProtocolo(int protocolo){
         int indice = protocolo -1;
         if(indice < 0 || indice >= capacidade)
@@ -71,5 +77,9 @@ public class VetorDinamico {
         }
         ocupacao = capacidade;
         redimensiona(capacidade * 2);
+    }
+
+    public Processo peek(){
+        return v[ocupacao-1];
     }
 }
