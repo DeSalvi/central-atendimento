@@ -13,6 +13,12 @@ public class VetorDinamico {
         ocupacao = 0;
     }
 
+    public VetorDinamico(){
+        v = new Processo[4];
+        capacidade = 4;
+        ocupacao = 0;
+    }
+
     public boolean estaCheio() {
         return capacidade == ocupacao;
     }
