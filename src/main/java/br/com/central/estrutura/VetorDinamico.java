@@ -60,15 +60,12 @@ public class VetorDinamico {
     }
 
     public int buscarPorProtocolo(int protocolo){
-        int indice = protocolo -1;
-        if(indice < 0 || indice >= capacidade)
-            return -1;
-
-        if(v[indice] == null)
-            return -1;
-
-        System.out.println(v[indice].toString());
-        return indice;
+        for (int i = 0; i < ocupacao; i++){
+            if (v[i].getProtocolo() == protocolo) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public void preencheVetor(){
