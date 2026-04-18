@@ -5,17 +5,7 @@ import main.java.br.com.central.model.Processo;
 public class VetorDinamico {
     private Processo[] v;
     private int capacidade;
-<<<<<<< HEAD
     private int ocupacao;
-
-    public VetorDinamico(int capacidade_inicial) {
-        v = new Processo[capacidade_inicial];
-        capacidade = capacidade_inicial;
-        ocupacao = 0;
-    }
-=======
-    public int ocupacao;
->>>>>>> 7369661 (feat: Implementa PilhaPrioridade e ajuste nas classes)
 
     public VetorDinamico(){
         v = new Processo[4];
@@ -89,8 +79,6 @@ public class VetorDinamico {
     public Processo peek(){
         return v[ocupacao-1];
     }
-<<<<<<< HEAD
-=======
 
     public void limpar(){
         for(int i=ocupacao-1; i>=0; i--){
@@ -106,5 +94,4 @@ public class VetorDinamico {
     public int getOcupacao(){
         return ocupacao-1;
     }
->>>>>>> 7369661 (feat: Implementa PilhaPrioridade e ajuste nas classes)
 }

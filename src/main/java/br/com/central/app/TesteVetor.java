@@ -4,7 +4,7 @@ import main.java.br.com.central.estrutura.VetorDinamico;
 
 public class TesteVetor {
     public static void main(String[] args) {
-        VetorDinamico vetorDinamico = new VetorDinamico(3);
+        VetorDinamico vetorDinamico = new VetorDinamico();
         vetorDinamico.preencheVetor();
         vetorDinamico.preencheVetor();
         vetorDinamico.preencheVetor();

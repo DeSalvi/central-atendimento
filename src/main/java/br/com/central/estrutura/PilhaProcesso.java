@@ -6,13 +6,6 @@ import main.java.br.com.central.model.Processo;
 public class PilhaProcesso {
     private VetorDinamico vetorDinamico;
 
-<<<<<<< HEAD
-    public PilhaProcesso(int capacidade){
-        this.vetorDinamico = new VetorDinamico(capacidade);
-    }
-
-=======
->>>>>>> 7369661 (feat: Implementa PilhaPrioridade e ajuste nas classes)
     public PilhaProcesso(){
         this.vetorDinamico = new VetorDinamico();
     }
@@ -38,17 +31,15 @@ public class PilhaProcesso {
             throw new PilhaVaziaException();
         vetorDinamico.imprimir();
     }
-<<<<<<< HEAD
-=======
 
     public void limpar(){
         vetorDinamico.limpar();
     }
 
     public boolean estaVazio(){
-        vetorDinamico.estaVazio();
+        return vetorDinamico.estaVazio();
     }
 
     public int getTamanho(){ return vetorDinamico.getOcupacao(); }
->>>>>>> 7369661 (feat: Implementa PilhaPrioridade e ajuste nas classes)
+
 }
