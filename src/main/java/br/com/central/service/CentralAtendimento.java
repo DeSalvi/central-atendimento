@@ -1,42 +1,45 @@
 package main.java.br.com.central.service;
 
+import main.java.br.com.central.estrutura.PilhaPrioridade;
 import main.java.br.com.central.estrutura.PilhaProcesso;
+import main.java.br.com.central.exception.PilhaVaziaException;
 import main.java.br.com.central.model.Processo;
 
-public class CentralAtendimento{
-    public PilhaProcesso pilhaPrincipal;
-    public PilhaProcesso pilhaAuxiliar;
+public class CentralAtendimento {
 
-    public CentralAtendimento(int capacidade){
-        this.pilhaPrincipal = new PilhaProcesso(capacidade);
-        this.pilhaAuxiliar = new PilhaProcesso(capacidade);
+    private PilhaPrioridade fila;
+    private PilhaProcesso historico;
+
+    public CentralAtendimento(int capacidade) {
+        this.fila = new PilhaPrioridade(capacidade);
+        this.historico = new PilhaProcesso(capacidade);
     }
 
-    public CentralAtendimento(){
-        this.pilhaPrincipal = new PilhaProcesso();
-        this.pilhaAuxiliar = new PilhaProcesso();
+    public void abrirProcesso(Processo p) {
+        fila.push(p);
     }
 
-    public void abrirProcesso(Processo p){
-        pilhaPrincipal.push(p);
-//        pilhaAuxiliar.pop();
+    public Processo atenderProximo() {
+        Processo atendido = fila.pop();
+        historico.push(atendido);
+        return atendido;
     }
 
-    public void atenderProximo(){
-        pilhaAuxiliar.push(pilhaPrincipal.peek());
-        pilhaPrincipal.pop();
+    public Processo desfazerUltimoAtendimento() {
+        if (historico.estaVazio())
+            throw new PilhaVaziaException();
+
+        Processo processo = historico.pop();
+        fila.push(processo);
+        return processo;
     }
 
-    public void desfazerUltimoAtendimento(){
-        pilhaPrincipal.push(pilhaAuxiliar.peek());
-        pilhaAuxiliar.pop();
+    public void listarPendentes() {
+        System.out.println("Pendentes organizados por prioridade:");
+        fila.imprimir();
     }
 
-    public void listarPendentes(){
-        pilhaPrincipal.imprimir();
-    }
-
-    public void listarHistorico(){
-        pilhaAuxiliar.imprimir();
+    public void listarHistorico() {
+        historico.imprimir();
     }
 }

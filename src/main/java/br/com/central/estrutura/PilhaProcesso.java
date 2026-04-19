@@ -18,10 +18,10 @@ public class PilhaProcesso {
         vetorDinamico.add(processo);
     }
 
-    public void pop(){
+    public Processo pop(){
         if (vetorDinamico.estaVazio())
             throw new PilhaVaziaException();
-        vetorDinamico.remove();
+        return vetorDinamico.remove();
     }
 
     public Processo peek(){
@@ -35,4 +35,8 @@ public class PilhaProcesso {
             throw new PilhaVaziaException();
         vetorDinamico.imprimir();
     }
+
+    public boolean estaVazio() {
+    return vetorDinamico.estaVazio();
+}
 }
