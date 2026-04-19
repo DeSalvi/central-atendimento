@@ -1,6 +1,11 @@
 Sistema de Central de Atendimento
 
-Projeto desenvolvido para a disciplina de Estruturas de Dados.
+Desenvolvido por:
+
+Pedro Henrique de Salvi Pedroso RA: 1430482513022
+Vinicius de Oliveira Freitas RA: 1430482513011
+
+Projeto desenvolvido para a disciplina de Estruturas de Dados da Fatec de Carapicuiba.
 
 📌 Descrição
 
