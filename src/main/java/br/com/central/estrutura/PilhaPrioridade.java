@@ -8,10 +8,10 @@ public class PilhaPrioridade {
     private PilhaProcesso pilhaNormal;
     private PilhaProcesso pilhaBaixa;
 
-    public PilhaPrioridade(int capacidade) {
-        this.pilhaUrgente = new PilhaProcesso(capacidade);
-        this.pilhaNormal = new PilhaProcesso(capacidade);
-        this.pilhaBaixa = new PilhaProcesso(capacidade);
+    public PilhaPrioridade() {
+        this.pilhaUrgente = new PilhaProcesso();
+        this.pilhaNormal = new PilhaProcesso();
+        this.pilhaBaixa = new PilhaProcesso();
     }
 
     public void push(Processo processo) {

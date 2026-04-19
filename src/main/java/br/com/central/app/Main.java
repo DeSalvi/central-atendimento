@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        CentralAtendimento centralAtendimento = new CentralAtendimento(10);
+        CentralAtendimento centralAtendimento = new CentralAtendimento();
 
         System.out.println("SEJA BEM-VINDO A CENTRAL DE ATENDIMENTO");
         int i;

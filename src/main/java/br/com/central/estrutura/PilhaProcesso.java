@@ -6,10 +6,6 @@ import main.java.br.com.central.model.Processo;
 public class PilhaProcesso {
     private VetorDinamico vetorDinamico;
 
-    public PilhaProcesso(int capacidade){
-        this.vetorDinamico = new VetorDinamico(capacidade);
-    }
-
     public PilhaProcesso(){
         this.vetorDinamico = new VetorDinamico();
     }

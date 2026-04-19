@@ -7,12 +7,6 @@ public class VetorDinamico {
     private int capacidade;
     private int ocupacao;
 
-    public VetorDinamico(int capacidade_inicial) {
-        v = new Processo[capacidade_inicial];
-        capacidade = capacidade_inicial;
-        ocupacao = 0;
-    }
-
     public VetorDinamico(){
         v = new Processo[4];
         capacidade = 4;
@@ -84,5 +78,20 @@ public class VetorDinamico {
 
     public Processo peek(){
         return v[ocupacao-1];
+    }
+
+    public void limpar(){
+        for(int i=ocupacao-1; i>=0; i--){
+            v[i] = null;
+        }
+        ocupacao =0;
+
+        if(capacidade >= 10 && ocupacao <= capacidade / 4) {
+            redimensiona(10);
+        }
+    }
+
+    public int getOcupacao(){
+        return ocupacao-1;
     }
 }

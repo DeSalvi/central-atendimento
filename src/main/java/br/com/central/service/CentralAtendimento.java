@@ -10,9 +10,9 @@ public class CentralAtendimento {
     private PilhaPrioridade fila;
     private PilhaProcesso historico;
 
-    public CentralAtendimento(int capacidade) {
-        this.fila = new PilhaPrioridade(capacidade);
-        this.historico = new PilhaProcesso(capacidade);
+    public CentralAtendimento() {
+        this.fila = new PilhaPrioridade();
+        this.historico = new PilhaProcesso();
     }
 
     public void abrirProcesso(Processo p) {

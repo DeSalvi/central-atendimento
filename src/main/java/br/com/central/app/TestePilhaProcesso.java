@@ -5,7 +5,7 @@ import main.java.br.com.central.model.Processo;
 
 public class TestePilhaProcesso {
     public static void main(String[] args) {
-        PilhaProcesso pilha = new PilhaProcesso(10);
+        PilhaProcesso pilha = new PilhaProcesso();
         pilha.pop(); // Testar a exception PilhaVaziaException
         pilha.push(new Processo("Vinicius", "1", 1));
         pilha.push(new Processo("Vinicius", "2", 1));
